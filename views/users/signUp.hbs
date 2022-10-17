@@ -1,0 +1,104 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="sm col-md-8 col-lg-5 mx-auto mt-5">
+        <div class="card shadow-lg border-danger">
+          <div class="border-bottom border-danger p-2 shadow">
+            <h3 class="fw-bold my-0 text-center">CREATE NEW ACCOUNT</h3>
+          </div>
+          <div class="card-body px-4 py-5">
+            <form
+              id="userSignUpForm"
+              action="/signUp"
+              method="post"
+              autocomplete="off"
+            >
+              <div class="row mb-2">
+                <div class="col">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input
+                    type="text"
+                    name="firstName"
+                    class="form-control"
+                    id="firstName"
+                  />
+                </div>
+                <div class="col">
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    class="form-control"
+                    id="lastName"
+                  />
+                </div>
+              </div>
+              <div class="row mb-2">
+                <div class="col">
+                  <label for="username" class="form-label">Create Username</label>
+                  <input
+                    type="text"
+                    name="username"
+                    class="form-control"
+                    id="username"
+                  />
+                </div>
+              </div>
+              <div class="row mb-2">
+                <div class="col">
+                  <label for="emailAddress" class="form-label">Email Address</label>
+                  <input
+                    type="email"
+                    name="emailAddress"
+                    class="form-control"
+                    id="emailAddres"
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-2">
+                <div class="col">
+                  <label for="password" class="form-label">Create Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    class="form-control"
+                    id="password"
+                  />
+                </div>
+                <div class="col">
+                  <label for="confirmPassword" class="form-label">Confirm
+                    Password</label>
+                  <input
+                    type="password"
+                    name="confirmPassword"
+                    class="form-control"
+                    id="confirmPassword"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="mb-2 text-center">
+                    <a href="/">Already have account ?</a>
+                  </div>
+                  {{#if signUpError}}
+                    <div class="mb-2">
+                      <p class="text-danger">{{signUpError}}</p>
+                    </div>
+                  {{/if}}
+
+                  <button
+                    type="submit"
+                    class="btn btn-outline-danger fw-bold col-12"
+                  >Sign Up</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="/javascripts/userFormsValidate.js"></script>

@@ -1,0 +1,63 @@
+<section>
+       <div class="container">
+              <div class="row">
+                     <div class="sm col-md-7 col-lg-5 mx-auto mt-5">
+                            <div class="card shadow-lg border-danger">
+                                   <div class="border-bottom border-danger p-2 shadow">
+                                          <h3 class="fw-bold my-0 text-center">Login To Reader Hub</h3>
+                                   </div>
+                                   <div class="card-body px-4 py-5">
+                                          <form
+                                                 action="/login"
+                                                 method="post"
+                                                 autocomplete="off"
+                                                 id="userLoginForm"
+                                          >
+                                                 <div class="mb-3">
+                                                        <label
+                                                               for="emailAddressOrUsername"
+                                                               class="form-label"
+                                                        >Email address or Username</label>
+                                                        <input
+                                                               type="text"
+                                                               name="emailAddressOrUsername"
+                                                               class="form-control"
+                                                               id="emailAddressOrUsername"
+                                                        />
+                                                 </div>
+                                                 <div class="mb-3">
+                                                        <label
+                                                               for="password"
+                                                               class="form-label"
+                                                        >Password</label>
+                                                        <input
+                                                               type="password"
+                                                               name="password"
+                                                               class="form-control"
+                                                               id="password"
+                                                        />
+                                                 </div>
+                                                 <div class="mb-3 text-center">
+                                                        <a href="/signUp" class="text-center">Create
+                                                               new account ?</a>
+                                                 </div>
+                                                 {{#if loginError}}
+                                                        <div class="mb-3 text-center">
+                                                               <p
+                                                                      class="text-danger"
+                                                               >{{loginError}}</p>
+                                                        </div>
+                                                 {{/if}}
+                                                 <button
+                                                        type="submit"
+                                                        class="btn btn-outline-danger fw-bold col-12"
+                                                 >Login</button>
+                                          </form>
+                                   </div>
+                            </div>
+
+                     </div>
+              </div>
+       </div>
+</section>
+<script src="/javascripts/userFormsValidate.js"></script>

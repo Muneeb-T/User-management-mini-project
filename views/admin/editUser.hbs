@@ -1,0 +1,132 @@
+<section>
+       <div class="container">
+              <div class="row">
+                     <div class="sm col-md-9 col-lg-5 mx-auto mt-4">
+                            <div class="card shadow border-danger">
+                                   <div class="border-bottom border-danger p-2 shadow">
+                                          <h4 class="text-center my-0 fw-bold">EDIT USER</h4>
+                                          <h3
+                                                 class="text-center my-0 fw-bold"
+                                          >{{userDetails.username}}</h3>
+                                   </div>
+                                   <div class="card-body py-4 px-5">
+                                          <form
+                                                 id="editUserForm"
+                                                 action="/admin/saveEdits"
+                                                 method="post"
+                                                 autocomplete="off"
+                                          >
+                                                 <div class="row mb-4">
+                                                        <input
+                                                               type="text"
+                                                               name="userId"
+                                                               value="{{userDetails._id}}"
+                                                               hidden
+                                                        />
+                                                        <div class="col">
+                                                               <label
+                                                                      for="firstName"
+                                                                      class="form-label"
+                                                               >First Name</label>
+                                                               <input
+                                                                      type="text"
+                                                                      name="firstName"
+                                                                      class="form-control"
+                                                                      id="firstName"
+                                                                      value="{{userDetails.firstName}}"
+                                                               />
+                                                        </div>
+                                                        <div class="col">
+                                                               <label
+                                                                      for="lastName"
+                                                                      class="form-label"
+                                                               >Last Name</label>
+                                                               <input
+                                                                      type="text"
+                                                                      name="lastName"
+                                                                      class="form-control"
+                                                                      id="lastName"
+                                                                      value="{{userDetails.lastName}}"
+                                                               />
+                                                        </div>
+                                                 </div>
+                                                 <div class="row mb-4">
+                                                        <div class="col">
+                                                               <label
+                                                                      for="username"
+                                                                      class="form-label"
+                                                               >Username</label>
+                                                               <input
+                                                                      type="text"
+                                                                      name="username"
+                                                                      class="form-control"
+                                                                      id="username"
+                                                                      value="{{userDetails.username}}"
+                                                               />
+                                                        </div>
+                                                 </div>
+                                                 <div class="row mb-4">
+                                                        <div class="col">
+                                                               <label
+                                                                      for="emailAddress"
+                                                                      class="form-label"
+                                                               >Email Address</label>
+                                                               <input
+                                                                      type="email"
+                                                                      name="emailAddress"
+                                                                      class="form-control"
+                                                                      id="emailAddress"
+                                                                      value="{{userDetails.emailAddress}}"
+                                                               />
+                                                        </div>
+                                                 </div>
+
+                                                 <div class="row mb-4">
+                                                        <div class="col">
+                                                               <label
+                                                                      for="password"
+                                                                      class="form-label"
+                                                               >Password</label>
+                                                               <div
+                                                                      class="input-group"
+                                                                      id="editPasswordInputGroup"
+                                                               >
+                                                                      <input
+                                                                             type="password"
+                                                                             name="password"
+                                                                             class="form-control"
+                                                                             id="password"
+                                                                             disabled
+                                                                      />
+                                                                      <button
+                                                                             class="btn btn-outline-danger w-25"
+                                                                      >Edit</button>
+                                                               </div>
+                                                        </div>
+                                                 </div>
+                                                 {{#if editError}}
+                                                        <div class="row">
+                                                               <div class="col">
+                                                                      <p
+                                                                             class="text-danger text-center"
+                                                                      >{{editError}}</p>
+                                                               </div>
+                                                        </div>
+                                                 {{/if}}
+                                                 <div class="row">
+                                                        <div class="col">
+                                                               <button
+                                                                      type="submit"
+                                                                      class="btn btn-outline-danger fw-bold col-12"
+                                                               >Save edits</button>
+                                                        </div>
+                                                 </div>
+                                          </form>
+                                   </div>
+                            </div>
+                     </div>
+              </div>
+       </div>
+</section>
+
+<script src="/javascripts/adminFormValidation.js"></script>

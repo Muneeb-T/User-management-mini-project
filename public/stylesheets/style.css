@@ -1,0 +1,18 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin-bottom: 100px;
+}
+
+.btn {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 3px 5px 3px;
+}
+
+.validation-error {
+  color: red;
+}
+
+.logo {
+  width: 2.5rem;
+  height: auto;
+}

@@ -1,0 +1,79 @@
+<section class="mt-4">
+    <div class="container">
+
+
+        <div class="row">
+            <div class="col">
+
+                {{#if newUserAdded}}
+                <div class="mb-2">
+                    <h6 class="text-success text-center">New user added successfully<h6>
+                </div>
+                {{/if}}
+                 {{#if userEdited}}
+                <div class="mb-2">
+                    <h6 class="text-success text-center">Edited user details successfully<h6>
+                </div>
+                {{/if}}
+
+                <div class="card shadow-lg border-danger">
+                    <div class="border-bottom border-danger p-2 shadow d-flex align-items-center">
+                        <h3 class="fw-bold mx-auto my-0">Users</h3>
+                        <a href="/admin/addUser" class="btn btn-outline-success fw-bold"><i
+                                class="bi bi-person-plus-fill me-2"></i>Add User</a>
+                    </div>
+                    <div class="card-body px-4 pt-4 pb-5">
+                        <table class="table table-striped" id="usersTable">
+                            <thead>
+                                <tr>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Email address</th>
+                                    <th scope="col">Edit</th>
+                                    <th scope="col">Delete</th>
+                                    <th scope="col">Block/Unblock</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each users}}
+                                <tr>
+                                    <td>{{this.firstName}}</td>
+                                    <td>{{this.lastName}}</td>
+                                    <td>{{this.username}}</td>
+                                    <td>{{this.emailAddress}}</td>
+                                    <td>
+                                        <a class="btn btn-sm" href="/admin/editUser/{{this._id}}"
+                                            onclick="return confirm('Are you sure to edit this ?');">
+                                            <i class="bi bi-pencil-fill"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-sm" href="/admin/deleteUser/{{this._id}}"
+                                            onclick="return confirm('Are you sure to delete this ?');">
+                                            <i class="bi bi-trash-fill text-danger"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-sm {{#if this.blocked}} text-success {{else}} text-danger {{/if}} fw-bold w-75"
+                                            href="/admin/blockUser/{{this._id}}/{{this.blocked}}"
+                                            onclick="return confirm('Are you sure to block this user?');">
+                                            {{#if this.blocked}}
+                                            <i class="bi bi-person-fill me-1"></i>
+                                            Unblock
+                                            {{else}}
+                                            <i class="bi bi-person-x-fill me-1"></i>
+                                            Block
+                                            {{/if}}
+                                        </a>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
